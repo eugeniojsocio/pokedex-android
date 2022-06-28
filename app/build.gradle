@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 30
+    buildToolsVersion '30.0.3'
+
+    defaultConfig {
+        applicationId "br.com.fabricadesinapse.pokedex_android"
+        minSdk 29
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'br.com.fabricadesinapse.pokedex_android'
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-accessibility:3.0.2', {
+        exclude group: 'com.android.suport', module: 'suport-annotations'
+    })
+    implementation 'junit:junit:4.13.2'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:25.3.0'
+
+    implementation 'com.android.support:design:32.0.0'
+    implementation 'com.android.support:recyclerview-v7:32.0.0'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+}
+
+
